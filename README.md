@@ -28,7 +28,8 @@ place a list of the plugins you want to hook in in:
 package.path/{{ prefix }}/plugins/{{ name }}.lua
 ```
 
-example:
+example
+=======
 
 bjne/plugins/core.lua
 ``` lua
@@ -45,7 +46,7 @@ return {
 		action = function() return true end
 	},
 	content = {
-		action = function() return true, nil, ngx.say("bar") end
+		action = function() return true, nil, ngx.say("bar") end,
 		after = "bjne.foo"
 	}
 }
