@@ -10,7 +10,7 @@ local load = load
 
 local hook_require_bytecode = hook.create('require_bytecode')
 
-code_cache:add("/updated", ngx.now())
+code_cache:add("/updated", ngx.now() * 1E9)
 
 local function require_bytecode(package)
     local code = code_cache:get(package) or hook_require_bytecode(package)
