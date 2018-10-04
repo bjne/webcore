@@ -51,3 +51,12 @@ return {
 	}
 }
 ```
+
+bjne/foo.lua
+``` lua
+return {
+	content = {
+		action = function() return true, nil, ngx.say("foo") end
+	}
+}
+```
