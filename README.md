@@ -1,18 +1,18 @@
 ``` nginx.conf
 init_by_lua_block {
-	require ("webcore"){name = "core", prefix = "bjne"}
+    require ("webcore"){name = "core", prefix = "bjne"}
 }
 
 http {
-	location / {
-		access_by_lua_block {
-			webcore()
-		}
+    location / {
+        access_by_lua_block {
+            webcore()
+        }
 
-		content_by_lua_block {
-			webcore()
-		}
-	}
+        content_by_lua_block {
+            webcore()
+        }
+    }
 }
 ```
 
@@ -34,29 +34,31 @@ example
 bjne/plugins/core.lua
 ``` lua
 return {
-	"bjne.foo",
-	"bjne.bar"
+    "bjne.foo",
+    "bjne.bar"
 }
 ```
 
 bjne/bar.lua
 ``` lua
 return {
-	access = {
-		action = function() return true end
-	},
-	content = {
-		action = function() return true, nil, ngx.say("bar") end,
-		after = "bjne.foo"
-	}
+    access = {
+        action = function() return true end
+    },
+    content = {
+        action = function() return true, nil, ngx.say("bar") end,
+        after = "bjne.foo"
+    }
 }
 ```
 
 bjne/foo.lua
 ``` lua
 return {
-	content = {
-		action = function() return true, nil, ngx.say("foo") end
-	}
+    content = {
+        action = function() return true, nil, ngx.say("foo") end
+    }
 }
 ```
+
+# vim: ts=4 et
