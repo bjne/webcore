@@ -61,4 +61,4 @@ return {
 }
 ```
 
-# vim: ts=4 et
+[comment]: <> # vim: ts=4 et
