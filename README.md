@@ -39,7 +39,7 @@ return {
 ```
 
 bjne/bar.lua
-```
+``` lua
 return {
 	access = {
 		action = function() return true end
