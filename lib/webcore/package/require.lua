@@ -20,7 +20,7 @@ local function require_bytecode(package)
         code = _code, _code and code_cache:set(package, code)
     end
 
-    return code and code()
+    return code
 end
 
 return insert(require.loaders, 2, require_bytecode)

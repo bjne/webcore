@@ -31,7 +31,7 @@ return function(phase)
             return log.ERR("can not enable priveleged agent: nginx < 1.13.8")
         end
 
-        return hook_priveleged_agent()
+        return hook_priveleged_agent(master_pid)
     end
 
     return hook_init_worker()

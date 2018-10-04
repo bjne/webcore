@@ -5,7 +5,7 @@ local log = webcore.log
 return function(hook, sorted_plugins, hook_plugins)
     local run, hook_name = tail_wrapper, hook.name
 
-    local _run = function(hook, modules, ...)
+    local _run = function(...)
         return run(...)
     end
 
@@ -21,13 +21,13 @@ return function(hook, sorted_plugins, hook_plugins)
             local action = plug.action
             local next_wrapper, wrapper = run
 
-            wrapper = function(config, ...)
+            wrapper = function(...)
                 local ok, done = action(...)
                 if not ok or done then
                     return ok, done
                 end
 
-                return next_wrapper(config, ...)
+                return next_wrapper(...)
             end
 
             run = wrapper
