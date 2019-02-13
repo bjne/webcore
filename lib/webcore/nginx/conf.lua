@@ -13,6 +13,7 @@ _M.get_phases = function()
 
     for phase, code in gmatch(conf, '\n%s*([a-z_]+)_by_lua_block%s*(%b{})') do
         if match(code, 'webcore%b()') then
+            phase = phase == "ssl_certificate" and "ssl_cert" or phase
             phases[phase] = true
         end
     end
