@@ -1,5 +1,5 @@
-local hook = require "webcore.hook"
-local pack = require "webcore.package"
+local hook = require "webcore.base.hook"
+local pack = require "webcore.base.package"
 
 local _M = { _VERSION = 0.1 }
 

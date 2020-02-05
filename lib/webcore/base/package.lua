@@ -1,4 +1,4 @@
-require "webcore.package.require"
+require "webcore.base.package.require"
 
 local concat = table.concat
 

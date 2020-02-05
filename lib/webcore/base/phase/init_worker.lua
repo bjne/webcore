@@ -1,6 +1,6 @@
-local hook = require "webcore.hook"
-local plug = require "webcore.plugin"
-local proc = require "webcore.process"
+local hook = require "webcore.base.hook"
+local plug = require "webcore.base.plugin"
+local proc = require "webcore.base.process"
 
 local log = webcore.log
 

@@ -1,6 +1,6 @@
 getfenv(0).require = require "resty.require"
 
-local hook = require "webcore.hook"
+local hook = require "webcore.base.hook"
 
 local code_cache = ngx.shared.code_cache
 local get_phase = ngx.get_phase

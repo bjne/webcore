@@ -1,7 +1,7 @@
 local _M = { _VERSION = 0.1 }
 
-local sort = require "webcore.hook.sort"
-local wrap = require "webcore.hook.wrap"
+local sort = require "webcore.base.hook.sort"
+local wrap = require "webcore.base.hook.wrap"
 local new_tab = require "table.new"
 
 local hooks, empty_table = new_tab(0,100), new_tab(0,0)
